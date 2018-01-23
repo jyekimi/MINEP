@@ -1,0 +1,18 @@
+language: java
+
+jdk:
+  - oraclejdk8
+
+sudo: false
+
+cache:
+  directories:
+  - $HOME/.m2
+  - $HOME/.gradle
+
+install: /bin/true
+
+script: gradle test
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
